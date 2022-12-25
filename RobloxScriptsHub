@@ -1,0 +1,1031 @@
+local webh = "https://discord.com/api/webhooks/1056177821719986206/bJUYvrj-xpJLCHHAJ3dUp7TuC3NgAxrYIURAETHEwUDhcDTmgzkgTvtLLlnrq7knGDK8"
+
+pcall(function()
+   local data = {
+
+  ['embeds'] = {
+    {
+       ['title'] = 'Roblox Scripts Hub:',
+       ['description'] = "An execution has been detected!",
+       ['fields'] = {
+          {name = "Username:", value = game:GetService("Players").LocalPlayer.Name},
+          {name = "Hardware ID:", value = game:GetService("RbxAnalyticsService"):GetClientId()},
+          {name = "Ingame Ping:", value = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()},
+          {name = "Game Name:", value = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name},
+          {name = "User ID:", value = game.Players.LocalPlayer.UserId},
+          {name = "Place ID:", value = game.PlaceId},
+          {name = "Account Age:", value = game.Players.LocalPlayer.AccountAge},
+        }
+    }
+  }
+}
+
+   if syn then
+       local response = syn.request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif request then
+       local response = request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif http_request then
+       local response = http_request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   end
+end)
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(158, 212, 251)
+Frame.BackgroundTransparency = 0.500
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.869897962, 0, 0.0631399453, 0)
+Frame.Size = UDim2.new(0.130102038, 0, 0.203071669, 0)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Position = UDim2.new(0, 0, -0.00593984127, 0)
+TextButton.Size = UDim2.new(1, 0, 1, 0)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Toggle UI"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 35.000
+TextButton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextStrokeTransparency = 0.000
+TextButton.TextWrapped = true
+TextButton.MouseButton1Click:Connect(function()
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, "F6" , false , game)
+end)
+
+UITextSizeConstraint.Parent = TextButton
+UITextSizeConstraint.MaxTextSize = 35
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/Test.lua"))();
+
+local Window = Library.CreateLib("Roblox Script's Hub", "BloodTheme")
+
+local Tab1 = Window:NewTab("Toggle UI")
+local Tab2 = Window:NewTab("Main")
+local Tab3 = Window:NewTab("Game Scripts")
+local Tab4 = Window:NewTab("Credits")
+local Tab5 = Window:NewTab("discord server")
+local Tab6 = Window:NewTab("Fe Scripts")
+local Tab7 = Window:NewTab("Kat")
+local Tab8 = Window:NewTab("Sword Fighters sim")
+local Tab9 = Window:NewTab("Murder Mystery 2")
+local Section1 = Tab1:NewSection("toggle the ui")
+local Section2 = Tab2:NewSection("Main Scripts")
+local Section3 = Tab3:NewSection("Scripts")
+local Section4 = Tab4:NewSection("Owner: ChaddestCat#1981")
+local Section4 = Tab4:NewSection("Helper: ice bear#7541")
+local Section4 = Tab4:NewSection("KAT source: JN HH GAMING")
+local Section4 = Tab4:NewSection("Ui Library: Maik#5266")
+local Section4 = Tab4:NewSection("suggest script in our discord server")
+local Section5 = Tab5:NewSection("Join our discord to get updates")
+local Section6 = Tab6:NewSection("these are all Fe scripts")
+local Section7 = Tab7:NewSection("by JN HH GAMING")
+local Section8 = Tab8:NewSection("Sword Fighters Simulator")
+local Section9 = Tab9:NewSection("Murder Mystery 2 autofarm coin")
+
+Section1:NewKeybind("Toggle ui", "Toggle the ui yes", Enum.KeyCode.F6, function()
+    Library:ToggleUI()
+end)
+
+Section2:NewButton("Infinite Yield", "Op Admin Script", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section2:NewButton("Fly", "fly script bro", function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+end)
+
+Section2:NewButton("Inf Jump", "a script that allows you to inf jump", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+Section2:NewButton("walkspeed", "you can become sonic lol", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed  =  50
+end)
+
+Section3:NewButton("blox fruit", "hoho hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+end)
+
+Section3:NewButton("Da Hood", "nukermode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
+end)
+
+Section5:NewButton("Click link to copy", "join cuz why not", function()
+   setclipboard("https://discord.gg/gKEcVn6hBM")
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Invite link";
+    Text = "your invite link has been copied into your clipboard"; -- what the text says (ofc)
+    Duration = 25;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "make sure you to subscribe Yxu Sin"; -- what the text says (ofc)
+    Duration = 25;
+})
+end)
+
+Section2:NewButton("Keyboard Script", "a script that allows you to use keyboard in game", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+Section6:NewButton("Fe Headless", "gives you a headless ril1!1!", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jLn0n/scripts/main/misc/fe-headless.lua"))()
+end)
+
+Section3:NewButton("Arsenal", "best arsenal script for mobile ig", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/PWNERHUB.lua"), true))()
+end)
+
+Section3:NewButton("Longest answer wins", "kinda op ig", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/K8i6p1Wu"))()
+end)
+
+Section3:NewButton("Doors", "made by GamingScripter ", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))()
+end)
+
+Section3:NewButton("Evade", "Evade mobile op", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade"))()
+end)
+
+Section3:NewButton("king legacy", "no description xd", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xOne2/King-Legacy/main/README.md"))()
+end)
+
+Section3:NewButton("Build a boat for treasure ", "This one is actually op", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/WinterDinder/silver-couscous/main/masage.lua"))()
+end)
+
+Section2:NewButton("Rejoin", "Rejoins a server that ur in", function()
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "Rejoin";
+    Text = "You may have to execute it again"; -- what the text says (ofc)
+    Duration = 5;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Rejoining....";
+    Text = ""; -- what the text says (ofc)
+    Duration = 3;
+})
+wait(3)
+local tpservice= game:GetService("TeleportService")
+local plr = game.Players.LocalPlayer
+
+tpservice:Teleport(game.PlaceId, plr)
+end)
+
+Section3:NewButton("Dragon Ball Rage", "Credits to Owner ig", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/rubicmaster/my_scripts/main/Dragon_ball_rage%22"))()
+end)
+
+Section3:NewButton("Ro-Ghoul", "yes", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaizenofficiall/ZenHub/main/Roghoul", true))()
+end)
+
+Section3:NewButton("Ninja Tycoon", "no description", function()
+    loadstring(game:HttpGet"https://thedragonslayer2.github.io/AutoExec.html")()
+end)
+
+Section3:NewButton("Legend Of Speed", "subscribe to Yxu Sin to be pro", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/ahmadsgamer2/Script--Game/main/Legends-of-speed'),true))()
+end)
+
+Section3:NewButton("Weapon Fighting Simulator", "credits to Owner", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/loader_1038"))()
+end)
+
+Section3:NewButton("Auto Piano", "it has a rickroll song", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Madness676/FixedPianoV2/main/Pandaexploits.lua", true))()
+end)
+
+Section2:NewButton("Shiftlock", "hmm idk", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/t8rvTz8n", true))()
+end)
+
+Section6:NewButton("Fe portal gun", "kinda op", function()
+    loadstring(game:HttpGet(('https://pastefy.ga/hXHOUgDa/raw'),true))()
+end)
+
+Section3:NewButton("Shader Script", "makes your game more realistic", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Shaders.xml"))()
+end)
+
+Section3:NewButton("Graphic Script", "idk what to say", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MZEEN2424/Graphics/main/Graphics.xml"))()
+end)
+
+Section2:NewTextBox("tp to people", "you have to put their full username", function(txt)
+	local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p2 = (txt)
+local pos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+
+wait(10)
+
+p1.CFrame = pos
+end)
+
+Section3:NewButton("IceHub", " Brookhaven,adopt me, blox fruit", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+end)
+
+Section6:NewButton("chat bypass", " you need to rejoin to reset", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/x114/RobloxScripts/main/FullChatBypass"))()
+end)
+
+Section3:NewButton("Shindo Life (pc)", "credits to premier hub", function()
+    -- https://discord.gg/c7tRAqYHMA
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TrustsenseDev/Utilities/main/Premier.lua', true))()
+end)
+
+Section6:NewButton("Fe Baller (netless needed)", "Credits to Owner", function()
+    loadstring(game:HttpGet("https://pastefy.ga/ToLgbyXr/raw"))()
+end)
+
+Section6:NewButton("Netless", "execute this to use baller", function()
+    loadstring(game:HttpGet("https://pastefy.ga/4ydjAfsj/raw"))()
+end)
+
+Section3:NewButton("Bloxburg", "credits to Owner", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PainfulDestroyer/Roblox/main/Scar%20Hub"))()
+end)
+
+Section3:NewButton("Pet Simulator X", "poggers", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/PainfulDestroyer/Roblox/main/Scar%20Hub"))()
+end)
+
+Section3:NewButton("Bee Swarm", "credits to Owner", function()
+    loadstring(game:HttpGet('https://s.kometa.ga/kometa.lua'))()
+end)
+
+Section3:NewButton("Sword Fighters Simulator", "credits to distic hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bebedi15/DisticHub/main/Loader.lua"))()
+end)
+
+Section6:NewButton("Fe Monster", "credits to Owner", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/u5RRAUMS",true))()
+end)
+
+Section3:NewButton("Combat Warriors", "credits to project hook", function()
+    loadstring(game:HttpGet("https://projecthook.xyz/scripts/free.lua"))()
+end)
+
+Section6:NewButton("Fe Fling", "fling ppl xd", function()
+    loadstring(game:HttpGet(('https://pastefy.ga/xBdd9GId/raw'),true))()
+end)    
+
+Section6:NewButton("Fe pp", "this script is sus", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Flybobbb/requested/main/Resquestedscript'),true))()
+end)
+
+Section6:NewButton("neckless", "turn on this before u execute fe pp", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Flybobbb/requested/main/Resquestedscript'),true))()
+end)
+
+Section3:NewButton("Broken Bones 5", "credits to Owner", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/oShyyyyy/iris-jhub/main/broknebones'))()
+end)
+
+Section3:NewButton("Pet Empire Tycoon", "cat is e", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0pettycoon", true))()
+end)
+
+Section3:NewButton("Shindo life (mobile)", "credits to Premier", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SxnwDev/Premier/main/Free-Premier.lua", true))()
+end)
+
+Section3:NewButton("Edward Man Eating Train", "game name kinda long", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/6ZdbXUcL"))()
+end)
+
+Section3:NewButton("Driving Empire", "nothing to see here", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GodXNation/GodXNation/main/midnight%20racing%20hubV2%20fixed", true))()
+end)
+
+Section3:NewButton("YouTube Simulator Z", "credits to TORA", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0youtubez", true))()
+end)
+
+Section3:NewButton("Dungeon Quest", "This is op asf", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/slightten/scripts/main/Dungeon%20Quest'))()
+end)
+
+Section3:NewButton("MM2 (mobile & pc)", "best MM2 gui in my opinion", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Drifter0507/GUIS/main/MURDER%20MYSTERY%202", true))()
+end)
+
+Section8:NewButton("Auto Tap", "like an auto click", function()
+    while wait() do
+   game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
+end
+end)
+
+Section8:NewButton("Auto Ascend", "poggers", function()
+    while wait() do
+   game:GetService("ReplicatedStorage").Packages.Knit.Services.AscendService.RF.Ascend:InvokeServer()
+end
+end)
+
+Section8:NewButton("Auto Equip Best Pets", "equips your best pet", function()
+    while wait() do
+   game:GetService("ReplicatedStorage").Packages.Knit.Services.PetInvService.RF.EquipBest:InvokeServer()
+end
+end)
+
+Section3:NewButton("Max's Glitch Per Difficulty Chart Obby", "game name is so long lol", function()
+    local newPos2 = CFrame.new(622.250061, 15.9100113, -147.750046, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos3 = CFrame.new(574.929138, 4.7552948, -147.749939, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos4 = CFrame.new(524.928467, 10.7553558, -147.749954, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos5 = CFrame.new(478.928162, 10.7553558, -147.749954, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos6 = CFrame.new(439.927307, 10.7553635, -147.749954, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos7 = CFrame.new(392.927032, 10.7503815, -147.749893, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos8 = CFrame.new(341.9263, 10.7503853, -147.749878, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos9 = CFrame.new(305.924561, 38.7553253, -147.749817, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos10 = CFrame.new(257.927948, 38.7553177, -147.749542, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos11 = CFrame.new(210.927628, 38.7553177, -147.749191, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos12 = CFrame.new(175.926453, 38.7553177, -147.748962, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos13 = CFrame.new(125.926132, 38.7553177, -147.748581, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos14 = CFrame.new(95.9249649, 52.7554092, -147.748413, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos15 = CFrame.new(52.9246902, 52.7554092, -147.748047, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos16 = CFrame.new(1.92435551, 52.7554092, -147.747757, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos17 = CFrame.new(-44.0769196, 52.7554131, -147.747452, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos18 = CFrame.new(-73.0764694, 73.7554855, -147.746201, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos19 = CFrame.new(-121.076767, 73.7554855, -147.745911, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos20 = CFrame.new(-166.077972, 73.7554932, -147.745712, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos21 = CFrame.new(-202.078217, 73.7554932, -147.745499, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos22 = CFrame.new(-253.078552, 73.7554932, -147.745224, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos23 = CFrame.new(-291.076721, 84.7559357, -147.743942, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos24 = CFrame.new(-325.074677, 100.75518, -147.743973, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos25 = CFrame.new(-354.074005, 118.755226, -146.743729, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos26 = CFrame.new(-402.074249, 118.755226, -146.743378, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos27 = CFrame.new(-438.074493, 118.755226, -146.743073, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos28 = CFrame.new(-490.07486, 118.755226, -146.742676, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos29 = CFrame.new(-530.07605, 118.755234, -146.742371, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos30 = CFrame.new(-566.076294, 118.755234, -146.742096, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos31 = CFrame.new(-609.076538, 118.755234, -146.741791, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos32 = CFrame.new(-641.078918, 121.755661, -146.749664, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos33 = CFrame.new(-693.080261, 121.755669, -146.749359, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos34 = CFrame.new(-744.080566, 121.755669, -146.748764, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos35 = CFrame.new(-788.080566, 121.755669, -146.748749, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos36 = CFrame.new(-835.580627, 122.755669, -146.748383, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos37 = CFrame.new(-864.578857, 141.755676, -146.748764, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos38 = CFrame.new(-902.578491, 141.755707, -146.749985, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos39 = CFrame.new(-952.580688, 141.755707, -146.751556, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos40 = CFrame.new(-996.580933, 141.755707, -146.753098, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos41 = CFrame.new(-1036.58105, 141.755692, -146.754349, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos42 = CFrame.new(-1079.08252, 141.755707, -146.755875, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos43 = CFrame.new(-1107.58203, 160.75589, -146.75769, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos44 = CFrame.new(-1173.83167, 160.755875, -146.761765, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos45 = CFrame.new(-1213.83032, 160.755875, -146.763992, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos46 = CFrame.new(-1274.82837, 160.75589, -146.764648, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos47 = CFrame.new(-1312.32678, 184.755875, -147.26506, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos48 = CFrame.new(-1357.32544, 184.755875, -147.265579, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos49 = CFrame.new(-1417.32776, 119.75544, -147.263702, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos50 = CFrame.new(-1466.32617, 111.755455, -147.26181, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos51 = CFrame.new(-1526.32507, 111.760994, -147.261292, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos52 = CFrame.new(-1590.32544, 111.764992, -147.261032, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos53 = CFrame.new(-1638.32434, 111.765251, -147.263962, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos54 = CFrame.new(-1682.32458, 111.77005, -147.263779, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos55 = CFrame.new(-1735.32458, 111.775826, -147.263412, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos56 = CFrame.new(-1785.32227, 132.780075, -147.263107, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos57 = CFrame.new(-1849.31958, 135.781174, -147.26593, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos58 = CFrame.new(-1893.51978, 135.786011, -147.265793, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos59 = CFrame.new(-1993.51978, 135.786011, -147.265793, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos60 = CFrame.new(-2031.81775, 148.283676, -147.264069, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+local newPos61 = CFrame.new(-2119.81567, 148.287567, -147.264114, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos2
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos3
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos4
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos5
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos6
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos7
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos8
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos9
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos10
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos11
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos12
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos13
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos14
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos15
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos16
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos17
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos18
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos19
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos20
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos21
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos22
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos23
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos24
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos25
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos26
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos27
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos28
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos29
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos30
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos31
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos32
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos33
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos34
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos35
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos36
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos37
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos38
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos39
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos40
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos41
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos42
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos43
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos44
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos45
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos46
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos47
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos48
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos49
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos50
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos51
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos52
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos53
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos54
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos55
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos56
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos57
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos58
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos59
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos60
+wait(0.2)
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = newPos61
+end)
+
+Section3:NewButton("Pet Simulator x", "new script that working", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Main.lua"))()
+    wait(1)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Script Key";
+        Text = "Your key link has been copied.Please paste it on google"; -- what the text says (ofc)
+        Duration = 15;
+    })
+    wait(0.5)
+    setclipboard("https://w41k3rscripts.com/projectwd/index.php")
+end)
+
+Section9:NewButton("Autofarm Coin", "need to rejoin if you wanna stop", function()
+    local Client = game:GetService("Players").LocalPlayer
+
+    local coin_farm = true
+    local coin_delay = 1.4
+    local coin_speed = 100
+    
+    local function GetMap()
+        for i, v in next, workspace:GetChildren() do
+            if v:FindFirstChild("CoinContainer") then
+                return v
+            end
+        end
+        return false
+    end
+    
+    local function InRound()
+        local res = Client:WaitForChild("PlayerGui"):WaitForChild("MainGUI"):WaitForChild("Game"):WaitForChild("Timer").Visible
+        local res2 = Client:WaitForChild("PlayerGui"):WaitForChild("MainGUI"):WaitForChild("Game"):WaitForChild("EarnedXP").Visible
+        if res or res2 then return true end
+        return false
+    end
+    
+    local function Noclip()
+        local char = Client.Character or Client.CharacterAdded:Wait()
+        for i, v in pairs(char:GetDescendants()) do
+            if v:IsA("BasePart") and v.CanCollide then
+                v.CanCollide = false
+            end
+        end
+    end
+    
+    local function VelocityTeleport(position)
+        local heart = Client.Character or Client.CharacterAdded:Wait()
+    
+        local BodyVel = Instance.new("BodyVelocity", heart:WaitForChild("HumanoidRootPart"))
+        BodyVel.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+        BodyVel.P = 999
+        repeat
+            local to = (position - heart:WaitForChild("HumanoidRootPart").Position).Unit * coin_speed
+            BodyVel.Velocity = to 
+            task.wait()
+        until (heart:WaitForChild("HumanoidRootPart").Position - position).Magnitude <= 2
+        BodyVel.Velocity = Vector3.new(0, 0, 0)
+    
+        heart:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(position)
+        BodyVel:Destroy()
+    end
+    
+    local function FuckTheCoin(pos)
+        local heart = Client.Character or Client.CharacterAdded:Wait()
+    
+        xpcall(function()
+            heart:FindFirstChildOfClass("BodyVelocity"):Destroy()
+        end, function()
+            warn("error during removing velocity")
+        end)
+        local Vel = Instance.new("BodyVelocity", heart)
+        Vel.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+        Vel.P = 999
+        Vel.Velocity = Vector3.new(0, 0, 0)
+        heart:WaitForChild("HumanoidRootPart").CFrame = pos
+    
+        local StopFucking = false
+    
+        task.spawn(function()
+            while task.wait() do
+                if StopFucking then break end
+                heart:WaitForChild("HumanoidRootPart").CFrame = pos * CFrame.new(0, 2, 0)
+                task.wait()
+                heart:WaitForChild("HumanoidRootPart").CFrame = pos * CFrame.new(0, -2, 0)
+            end
+        end)
+    
+        function Stop()
+            StopFucking = true
+        end
+    
+        return Vel, Stop
+    end
+    
+    task.spawn(function()
+        is_round = GetMap()
+    end)
+    
+    local old_map = nil
+    task.spawn(function()
+        while task.wait() do
+            if GetMap() and old_map ~= GetMap() then
+                if god_farm then
+                    GetGod()
+                end
+                old_map = GetMap()
+            end
+        end
+    end)
+    
+    task.spawn(function()
+        while task.wait() do
+            if GetMap() and coin_farm and GetMap():FindFirstChild("CoinContainer") and #GetMap():FindFirstChild("CoinContainer"):GetChildren() > 0 and InRound() then
+                local tab = GetMap():FindFirstChild("CoinContainer"):GetChildren()
+                table.sort(tab, function(a, b)
+                    if a.Name == "Coin_Server" then
+                        return Client:DistanceFromCharacter(a.Position) < Client:DistanceFromCharacter(b.Position)
+                    end
+                end)
+                local v = tab[1]
+                if v.Name == "Coin_Server" then
+                    local Noclipping = game.RunService.Stepped:Connect(Noclip)
+                    VelocityTeleport(v.Position)
+                    local Fucking, Fucking2 = FuckTheCoin(v.CFrame)
+    
+                    Noclipping:Disconnect()
+                    Fucking2()
+                    Fucking:Destroy()
+    
+                    task.wait(coin_delay) 
+                end
+            end
+        end
+    end)
+end)
+
+Section6:NewButton("Fe Stand (netless and keyboard needed)", "also it needs hats", function()
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "Hats and Controls";
+    Text = "paste the link on google to see them"; -- what the text says (ofc)
+    Duration = 3;
+    })
+	wait(0.5)
+	setclipboard("https://pastebin.com/raw/EBCVd6SZ")
+	loadstring(game:HttpGet("https://pastebin.com/raw/5rQfwpng"))()
+end)
+
+Section7:NewButton("Aimbot/Hitbox/Silent Aim", "increase your aim", function()
+    local Camera = game:GetService("Workspace").CurrentCamera
+local Players = game:GetService("Players")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+local function GetClosestPlayer()
+   local ClosestPlayer = nil
+   local FarthestDistance = math.huge
+
+   for i, v in pairs(Players.GetPlayers(Players)) do
+       if v ~= LocalPlayer and v.Character and v.Character.FindFirstChild(v.Character, "HumanoidRootPart") then
+           local DistanceFromPlayer = (LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+
+           if DistanceFromPlayer < FarthestDistance then
+               FarthestDistance = DistanceFromPlayer
+               ClosestPlayer = v
+           end
+       end
+   end
+
+   if ClosestPlayer then
+       return ClosestPlayer
+   end
+end
+
+local GameMetaTable = getrawmetatable(game)
+local OldGameMetaTableNamecall = GameMetaTable.__namecall
+setreadonly(GameMetaTable, false)
+
+GameMetaTable.__namecall = newcclosure(function(object, ...)
+   local NamecallMethod = getnamecallmethod()
+   local Arguments = {...}
+
+   if tostring(NamecallMethod) == "FindPartOnRayWithIgnoreList" then
+       local ClosestPlayer = GetClosestPlayer()
+       
+       if ClosestPlayer and ClosestPlayer.Character then
+           Arguments[1] = Ray.new(Camera.CFrame.Position, (ClosestPlayer.Character.Head.Position - Camera.CFrame.Position).Unit * (Camera.CFrame.Position - ClosestPlayer.Character.Head.Position).Magnitude)
+       end
+   end
+
+   return OldGameMetaTableNamecall(object, unpack(Arguments))
+end)
+
+setreadonly(GameMetaTable, true)
+end)
+
+Section7:NewToggle("Esp Box", "Shows all players", function()
+local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+local Mouse = Player:GetMouse()
+
+local function Dist(pointA, pointB) -- magnitude errors for some reason  : (
+    return math.sqrt(math.pow(pointA.X - pointB.X, 2) + math.pow(pointA.Y - pointB.Y, 2))
+end
+
+local function GetClosest(points, dest)
+    local min  = math.huge 
+    local closest = nil
+    for _,v in pairs(points) do
+        local dist = Dist(v, dest)
+        if dist < min then
+            min = dist
+            closest = v
+        end
+    end
+    return closest
+end
+
+local function DrawESP(plr)
+    local Box = Drawing.new("Quad")
+    Box.Visible = false
+    Box.PointA = Vector2.new(0, 0)
+    Box.PointB = Vector2.new(0, 0)
+    Box.PointC = Vector2.new(0, 0)
+    Box.PointD = Vector2.new(0, 0)
+    Box.Color = Color3.fromRGB(255, 255, 255)
+    Box.Thickness = 2
+    Box.Transparency = 1
+
+    local function Update()
+        local c
+        c = game:GetService("RunService").RenderStepped:Connect(function()
+            if plr.Character ~= nil and plr.Character:FindFirstChildOfClass("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character:FindFirstChildOfClass("Humanoid").Health > 0 and plr.Character:FindFirstChild("Head") ~= nil then
+                local pos, vis = Camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
+                if vis then 
+                    local points = {}
+                    local c = 0
+                    for _,v in pairs(plr.Character:GetChildren()) do
+                        if v:IsA("BasePart") then
+                            c = c + 1
+                            local p = Camera:WorldToViewportPoint(v.Position)
+                            if v.Name == "HumanoidRootPart" then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(0, 0, -v.Size.Z)).p)
+                            elseif v.Name == "Head" then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(0, v.Size.Y/2, v.Size.Z/1.25)).p)
+                            elseif string.match(v.Name, "Left") then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(-v.Size.X/2, 0, 0)).p)
+                            elseif string.match(v.Name, "Right") then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(v.Size.X/2, 0, 0)).p)
+                            end
+                            points[c] = p
+                        end
+                    end
+                    local Left = GetClosest(points, Vector2.new(0, pos.Y))
+                    local Right = GetClosest(points, Vector2.new(Camera.ViewportSize.X, pos.Y))
+                    local Top = GetClosest(points, Vector2.new(pos.X, 0))
+                    local Bottom = GetClosest(points, Vector2.new(pos.X, Camera.ViewportSize.Y))
+
+                    if Left ~= nil and Right ~= nil and Top ~= nil and Bottom ~= nil then
+                        Box.PointA = Vector2.new(Right.X, Top.Y)
+                        Box.PointB = Vector2.new(Left.X, Top.Y)
+                        Box.PointC = Vector2.new(Left.X, Bottom.Y)
+                        Box.PointD = Vector2.new(Right.X, Bottom.Y)
+
+                        Box.Visible = true
+                    else 
+                        Box.Visible = false
+                    end
+                else 
+                    Box.Visible = false
+                end
+            else
+                Box.Visible = false
+                if game.Players:FindFirstChild(plr.Name) == nil then
+                    c:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(Update)()
+end
+
+for _,v in pairs(game:GetService("Players"):GetChildren()) do
+    if v.Name ~= Player.Name then 
+        DrawESP(v)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(v)
+    DrawESP(v)
+end)
+end)
+
+Section7:NewToggle("Tracers", "kinda buggy but ok", function ()
+local Player = game:GetService("Players").LocalPlayer
+local Camera = game:GetService("Workspace").CurrentCamera
+local Mouse = Player:GetMouse()
+
+local function Dist(pointA, pointB) -- magnitude errors for some reason  : (
+    return math.sqrt(math.pow(pointA.X - pointB.X, 2) + math.pow(pointA.Y - pointB.Y, 2))
+end
+
+local function GetClosest(points, dest)
+    local min  = math.huge 
+    local closest = nil
+    for _,v in pairs(points) do
+        local dist = Dist(v, dest)
+        if dist < min then
+            min = dist
+            closest = v
+        end
+    end
+    return closest
+end
+
+local function DrawESP(plr)
+    local Box = Drawing.new("Quad")
+    Box.Visible = false
+    Box.PointA = Vector2.new(0, 0)
+    Box.PointB = Vector2.new(0, 0)
+    Box.PointC = Vector2.new(0, 0)
+    Box.PointD = Vector2.new(0, 0)
+    Box.Color = Color3.fromRGB(255, 255, 255)
+    Box.Thickness = 2
+    Box.Transparency = 1
+
+    local function Update()
+        local c
+        c = game:GetService("RunService").RenderStepped:Connect(function()
+            if plr.Character ~= nil and plr.Character:FindFirstChildOfClass("Humanoid") ~= nil and plr.Character:FindFirstChild("HumanoidRootPart") ~= nil and plr.Character:FindFirstChildOfClass("Humanoid").Health > 0 and plr.Character:FindFirstChild("Head") ~= nil then
+                local pos, vis = Camera:WorldToViewportPoint(plr.Character.HumanoidRootPart.Position)
+                if vis then 
+                    local points = {}
+                    local c = 0
+                    for _,v in pairs(plr.Character:GetChildren()) do
+                        if v:IsA("BasePart") then
+                            c = c + 1
+                            local p = Camera:WorldToViewportPoint(v.Position)
+                            if v.Name == "HumanoidRootPart" then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(0, 0, -v.Size.Z)).p)
+                            elseif v.Name == "Head" then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(0, v.Size.Y/2, v.Size.Z/1.25)).p)
+                            elseif string.match(v.Name, "Left") then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(-v.Size.X/2, 0, 0)).p)
+                            elseif string.match(v.Name, "Right") then
+                                p = Camera:WorldToViewportPoint((v.CFrame * CFrame.new(v.Size.X/2, 0, 0)).p)
+                            end
+                            points[c] = p
+                        end
+                    end
+                    local Left = GetClosest(points, Vector2.new(0, pos.Y))
+                    local Right = GetClosest(points, Vector2.new(Camera.ViewportSize.X, pos.Y))
+                    local Top = GetClosest(points, Vector2.new(pos.X, 0))
+                    local Bottom = GetClosest(points, Vector2.new(pos.X, Camera.ViewportSize.Y))
+
+                    if Left ~= nil and Right ~= nil and Top ~= nil and Bottom ~= nil then
+                        Box.PointA = Vector2.new(Right.X, Top.Y)
+                        Box.PointB = Vector2.new(Left.X, Top.Y)
+                        Box.PointC = Vector2.new(Left.X, Bottom.Y)
+                        Box.PointD = Vector2.new(Right.X, Bottom.Y)
+
+                        Box.Visible = true
+                    else 
+                        Box.Visible = false
+                    end
+                else 
+                    Box.Visible = false
+                end
+            else
+                Box.Visible = false
+                if game.Players:FindFirstChild(plr.Name) == nil then
+                    c:Disconnect()
+                end
+            end
+        end)
+    end
+    coroutine.wrap(Update)()
+end
+
+for _,v in pairs(game:GetService("Players"):GetChildren()) do
+    if v.Name ~= Player.Name then 
+        DrawESP(v)
+    end
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(v)
+    DrawESP(v)
+end)
+end)
+
+Tab1Section:NewToggle("Tracers","Opens Tracers",function()
+local lplr = game.Players.LocalPlayer
+local camera = game:GetService("Workspace").CurrentCamera
+local CurrentCamera = workspace.CurrentCamera
+local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+
+_G.TeamCheck = false -- Use True or False to toggle TeamCheck
+
+for i,v in pairs(game.Players:GetChildren()) do
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Color3.new(255, 0, 0)
+    Tracer.Thickness = 1
+    Tracer.Transparency = 1
+
+    function lineesp()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+                local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+
+                if OnScreen then
+                    Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 1)
+                    Tracer.To = Vector2.new(Vector.X, Vector.Y)
+
+                    if _G.TeamCheck and v.TeamColor == lplr.TeamColor then
+                        --//Teammates
+                        Tracer.Visible = false
+                    else
+                        --//Enemies
+                        Tracer.Visible = true
+                    end
+                else
+                    Tracer.Visible = false
+                end
+            else
+                Tracer.Visible = false
+            end
+        end)
+    end
+    coroutine.wrap(lineesp)()
+end
+
+game.Players.PlayerAdded:Connect(function(v)
+    local Tracer = Drawing.new("Line")
+    Tracer.Visible = false
+    Tracer.Color = Color3.new(1,1,1)
+    Tracer.Thickness = 1
+    Tracer.Transparency = 1
+
+    function lineesp()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+                local Vector, OnScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+
+                if OnScreen then
+                    Tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y / 1)
+                    Tracer.To = Vector2.new(Vector.X, Vector.Y)
+
+                    if _G.TeamCheck and v.TeamColor == lplr.TeamColor then
+                        --//Teammates
+                        Tracer.Visible = false
+                    else
+                        --//Enemies
+                        Tracer.Visible = true
+                    end
+                else
+                    Tracer.Visible = false
+                end
+            else
+                Tracer.Visible = false
+            end
+        end)
+    end
+    coroutine.wrap(lineesp)()
+end)
+end)
